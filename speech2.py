@@ -20,7 +20,7 @@ def speak(text):
 def get_audio():
     r = sr.Recognizer()
     with sr.Microphone(0) as source:
-        r.adjust_for_ambient_noise(source, duration = 5)
+        r.adjust_for_ambient_noise(source, duration = 0.2)
         audio = r.listen(source)
         said = " "
 
@@ -32,7 +32,6 @@ def get_audio():
         
     return said
 
-print((sr.Microphone.list_microphone_names()))
 text = "Start speaking."
 speak(text)
 get_audio()
